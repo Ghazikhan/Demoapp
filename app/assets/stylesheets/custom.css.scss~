@@ -6,6 +6,40 @@
 -webkit-box-sizing: border-box;
 box-sizing: border-box;
 }
+
+html {
+overflow-y: scroll;
+}
+
+h1, h2, h3, h4, h5, h6 {
+line-height: 1;
+}
+h1 {
+font-size: 3em;
+letter-spacing: -2px;
+margin-bottom: 30px;
+text-align: center;
+}
+h2 {
+letter-spacing: -1px;
+margin-bottom: 30px;
+text-align: center;
+font-weight: normal;
+color: $gray-light;
+}
+p {
+font-size: 1.1em;
+line-height: 1.7em;
+}
+
+.leftbar {
+	padding-left: 10px;
+}
+
+.rightbar {
+	padding-right: 10px;
+}
+
 input, textarea, select, .uneditable-input {
 width: 100%;
 margin-bottom: 15px;
@@ -49,4 +83,16 @@ overflow: auto;
 padding: 10px 0;
 border-bottom: 1px solid $gray-lighter;
 }
+}
+
+
+
+.ads728x90 {
+	border: 1px solid gray;
+	width: 728px;
+	height: 90px;
+}
+
+.ads728x90 h3 {
+	text-align: center;
 }
