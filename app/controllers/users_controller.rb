@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   def show
   	@user = User.find(params[:id])
   	@userinfo = Userinfo.new
+  	@education = Education.new
   	#@userinfo = Userinfo.find(params[:id])
   end
 end

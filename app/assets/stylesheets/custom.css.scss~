@@ -40,7 +40,7 @@ line-height: 1.7em;
 	padding-right: 10px;
 }
 
-input, textarea, select, .uneditable-input {
+input, textarea, uneditable-input {
 width: 100%;
 margin-bottom: 15px;
 @include box_sizing;
@@ -86,7 +86,6 @@ border-bottom: 1px solid $gray-lighter;
 }
 
 
-
 .ads728x90 {
 	border: 1px solid gray;
 	width: 728px;
@@ -96,4 +95,18 @@ border-bottom: 1px solid $gray-lighter;
 .ads728x90 h3 {
 	text-align: center;
 	line-height: auto;
+}
+
+select {
+	width: 100%;
+	margin-bottom: 15px;
+	border: 1px solid #E6E6E6;
+	border-radius: 4px;
+	padding: 6px;
+	background-color: white;
+	@include box_sizing;
+}
+
+select focus {
+	box-shadow: 0px 0px 3px blue;
 }

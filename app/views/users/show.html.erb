@@ -9,8 +9,12 @@
 	<%= @user.email %>
 </p>
 
-<% if @user.userinfos.exists?%>
+<% if @user.userinfos.exists? %>
 	<%= render 'shared/userinfo' %>
+	<% if @user.educations.exists? %>
+	<%= render 'shared/education' %>
+	<% end %>
+	<%= render 'educations/form' %>
 <% else %>
 	<%= render 'userinfos/form' %>
 <% end %>
