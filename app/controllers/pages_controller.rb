@@ -5,8 +5,10 @@ class PagesController < ApplicationController
 
   def about
       @title = 'About |'
+      @user = current_user
   end
 
   def contact
+  	@user = current_user
   end
 end

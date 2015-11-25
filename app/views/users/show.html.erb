@@ -1,4 +1,10 @@
 <br>
+<% if alert %>
+<p class="alert alert-danger"><%= alert %></p>
+<% end %>
+<% if notice %>
+	<p class="alert alert-success"><%= notice %></p> 
+<% end %>
 <p>
   <strong>Name:</strong>
 	<%= @user.first_name %> <%= @user.last_name %>
@@ -12,7 +18,7 @@
 <% if @user.userinfos.exists? %>
 	<%= render 'shared/userinfo' %>
 	<% if @user.educations.exists? %>
-	<%= render 'shared/education' %>
+		<%= render 'shared/education' %>
 	<% end %>
 	<%= render 'educations/form' %>
 <% else %>

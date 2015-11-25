@@ -98,9 +98,9 @@ border-bottom: 1px solid $gray-lighter;
 }
 
 select {
-	width: 100%;
+	width: 31%;
 	margin-bottom: 15px;
-	border: 1px solid #E6E6E6;
+	border: 1px solid #BDBDBD;
 	border-radius: 4px;
 	padding: 6px;
 	background-color: white;

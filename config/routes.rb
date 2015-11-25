@@ -4,11 +4,9 @@ Rails.application.routes.draw do
   resources :degres
   resources :institutes
   resources :cities
- get 'about' => 'pages#about'
- get 	'home' 'pages/home'
+  
   root 	'pages#home'
- 
-
+ 	get 	'pages/about'
   get 	'pages/contact'
 
   devise_for :users

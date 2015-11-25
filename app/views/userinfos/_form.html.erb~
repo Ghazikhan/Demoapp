@@ -1,44 +1,36 @@
-<%= form_for(@userinfo) do |f| %>
-  <% if @userinfo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@userinfo.errors.count, "error") %> prohibited this userinfo from being saved:</h2>
+<hr>
+<p class="alert alert-info">
+Note..! Fill these field very carefully. After submit will not be editable.
+</p> 
+<%= form_for([@user, @user.userinfos.build]) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
 
-      <ul>
-      <% @userinfo.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :date_of_birth %><br>
-    <%= f.date_select :date_of_birth, :start_year => 1970 ,:end_year => 2050%>
-   
+  <div class="row">
+  <div class="col-md-8">
+    <%= f.date_select(:date_of_birth, start_year: 1970, order: [:day, :month, :year], 
+    																	prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }) %>
+  </div>
   </div>
 
  <div class="row">
-<div class="col-md-1">
-    <%= f.radio_button :gender, "Male" %>
- </div>
-    <%= f.label :gender, "Male" %>
+	<div class="col-md-1">
+		  <%= f.radio_button :gender, "Male" %>
+	 </div>
+   <%= f.label :gender, "Male" %>
  </div>
  <div class="row">
- <div class="col-md-1">
-    <%= f.radio_button :gender, "Female" %>
-</div>
+	 <div class="col-md-1">
+		  <%= f.radio_button :gender, "Female" %>
+	 </div>
     <%= f.label :gender, "Female" %>
  </div>
+ <div class="row">
+	 <div class="col-md-4">
+		  <%= f.text_field :mobile, class: "form-control", placeholder: "Phone" %>
+		</div>
+  </div>
+    <%= f.text_area :address, class: "form-control", placeholder: "Address" %>
 
-  <div class="field">
-    <%= f.label :mobile %><br>
-    <%= f.text_field :mobile %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_area :address %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+
 <% end %>

@@ -48,6 +48,9 @@ margin-bottom: 15px;
 input {
 height: auto !important;
 }
+textarea {
+resize: none;
+}
 #error_explanation {
 color: red;
 ul {
@@ -98,7 +101,7 @@ border-bottom: 1px solid $gray-lighter;
 }
 
 select {
-	width: 100%;
+	width: 31%;
 	margin-bottom: 15px;
 	border: 1px solid #BDBDBD;
 	border-radius: 4px;
