@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125163903) do
+ActiveRecord::Schema.define(version: 20151126105018) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,19 @@ ActiveRecord::Schema.define(version: 20151125163903) do
   add_index "educations", ["degre_id"], name: "index_educations_on_degre_id", using: :btree
   add_index "educations", ["institute_id"], name: "index_educations_on_institute_id", using: :btree
   add_index "educations", ["user_id"], name: "index_educations_on_user_id", using: :btree
+
+  create_table "experiences", force: :cascade do |t|
+    t.text     "work_type"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "work_field_id"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "experiences", ["user_id"], name: "index_experiences_on_user_id", using: :btree
+  add_index "experiences", ["work_field_id"], name: "index_experiences_on_work_field_id", using: :btree
 
   create_table "institutes", force: :cascade do |t|
     t.string   "name"
@@ -89,9 +102,17 @@ ActiveRecord::Schema.define(version: 20151125163903) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "work_fields", force: :cascade do |t|
+    t.string   "field_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "educations", "degres"
   add_foreign_key "educations", "institutes"
   add_foreign_key "educations", "users"
+  add_foreign_key "experiences", "users"
+  add_foreign_key "experiences", "work_fields"
   add_foreign_key "institutes", "cities"
   add_foreign_key "userinfos", "users"
 end

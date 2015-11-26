@@ -1,18 +1,18 @@
 Rails.application.routes.draw do
   
-  
-  resources :degres
-  resources :institutes
-  resources :cities
-  
   root 	'pages#home'
  	get 	'pages/about'
   get 	'pages/contact'
-
   devise_for :users
+  
+  resources :work_fields
+  resources :degres
+  resources :institutes
+  resources :cities
   resources :users do
   	resources :userinfos
   	resources :educations
+	  resources :experiences  	
   end
   
   # The priority is based upon order of creation: first created -> highest priority.

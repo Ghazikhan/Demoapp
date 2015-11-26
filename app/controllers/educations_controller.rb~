@@ -18,10 +18,12 @@ class EducationsController < ApplicationController
   def create
   	@user = User.find(params[:user_id])
     @education = @user.educations.create(education_params)
+    @date = Time.now
+		@date.strftime("%Y")
       if @education.save
         redirect_to @user, notice: 'Education was successfully created.'
       else
-      	@education.errors = status: :unprocessable_entity
+      	flash[:alert] = "Please fill complete form below..!"
         redirect_to @user
       end
   end

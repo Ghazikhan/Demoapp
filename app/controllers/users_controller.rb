@@ -11,5 +11,6 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
   	@userinfo = Userinfo.new
   	@education = Education.new
+  	@work_field = WorkField.new
   end
 end

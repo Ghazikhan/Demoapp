@@ -5,18 +5,20 @@
 <% if notice %>
 	<p class="alert alert-success"><%= notice %></p> 
 <% end %>
-  <div class="row">
-  <div class="col-md-8">
+
 <p><strong>Name:</strong> <%= @user.first_name %> <%= @user.last_name %></p>
 <p><strong>Email:</strong>	<%= @user.email %></p>
-  </div>
-  </div>
+
 <% if @user.userinfos.exists? %>
 	<%= render 'shared/userinfo' %>
 	<% if @user.educations.exists? %>
 		<%= render 'shared/education' %>
 	<% end %>
 	<%= render 'educations/form' %>
+	<% if @user.experiences.exists? %>
+		<%= render 'shared/experience' %>
+	<% end %>
+	<%= render 'experiences/form' %>
 <% else %>
 	<%= render 'userinfos/form' %>
 <% end %>

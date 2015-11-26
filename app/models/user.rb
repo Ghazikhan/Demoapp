@@ -6,5 +6,6 @@ class User < ActiveRecord::Base
          
   has_many :userinfos
   has_many :educations
+  has_many :experiences
   
 end
