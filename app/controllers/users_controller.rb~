@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   def index
+  	@user = current_user
+  	@users = User.all
+  	@education = Education.new
   end
 
   def new
@@ -8,6 +11,6 @@ class UsersController < ApplicationController
   def show
   	@user = User.find(params[:id])
   	@userinfo = Userinfo.new
-  	#@userinfo = Userinfo.find(params[:id])
+  	@education = Education.new
   end
 end

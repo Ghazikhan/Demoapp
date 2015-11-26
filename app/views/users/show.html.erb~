@@ -1,20 +1,16 @@
+<br>
 <% if alert %>
-<p class="alert alert-danger"><%= alert %></p>
+	<p class="alert alert-danger"><%= alert %></p>
 <% end %>
 <% if notice %>
 	<p class="alert alert-success"><%= notice %></p> 
 <% end %>
-<br>
-<p>
-  <strong>Name:</strong>
-	<%= @user.first_name %> <%= @user.last_name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-	<%= @user.email %>
-</p>
-
+  <div class="row">
+  <div class="col-md-8">
+<p><strong>Name:</strong> <%= @user.first_name %> <%= @user.last_name %></p>
+<p><strong>Email:</strong>	<%= @user.email %></p>
+  </div>
+  </div>
 <% if @user.userinfos.exists? %>
 	<%= render 'shared/userinfo' %>
 	<% if @user.educations.exists? %>
@@ -24,3 +20,4 @@
 <% else %>
 	<%= render 'userinfos/form' %>
 <% end %>
+

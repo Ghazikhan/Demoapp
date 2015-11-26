@@ -1,10 +1,10 @@
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Division</th>
-      <th>Obtained marks</th>
+      <th>Obt: Marks</th>
       <th>Pass year</th>
-      <th>Degre</th>
+      <th>Degree</th>
       <th>Institute</th>
     </tr>
   </thead>

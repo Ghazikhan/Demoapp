@@ -20,15 +20,12 @@ class UserinfosController < ApplicationController
   @user = User.find(params[:user_id])
     @userinfo = @user.userinfos.create(userinfo_params)
 
-    respond_to do |format|
       if @userinfo.save
-        format.html { redirect_to @user, notice: 'Userinfo was successfully created.' }
-        format.json { render :show, status: :created, location: @userinfo }
+        redirect_to @user, notice: 'User profile was successfully created.'
       else
-        format.html { render :new }
-        format.json { render json: @userinfo.errors, status: :unprocessable_entity }
+      	flash[:alert] = "All fields are required...!"
+        redirect_to @user
       end
-    end
   end
 
   def update
