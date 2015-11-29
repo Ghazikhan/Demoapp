@@ -16,9 +16,13 @@
       <tr>
         <td><%= education.division %></td>
         <td><%= education.obtained_marks %></td>
-        <td><%= education.pass_year %></td>
+        <td><%= education.pass_year.strftime("%Y") %></td>
         <td><%= education.degre.name_with_type %></td>
         <td><%= education.institute.name_with_city %></td>
+        <td><%= link_to 'Edit', edit_education_path %></td>
+        
+      
+        
       </tr>
     <% end %>
   </tbody>

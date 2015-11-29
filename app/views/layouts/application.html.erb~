@@ -7,6 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="container">
+    <div class="row">
+    <div class="col-sm-4" ></div>
+    <div class="col-sm-4" ></div>
+    <div class="col-sm-4" ></div>
+  </div>
+<div class="container-fluid" style="background-color: #d0e4fe; max-width:1500px">
+
+
 
 <%= render 'shared/header' %>
 <div class="row">
@@ -19,7 +28,7 @@
 <div class="row">
 	<div class="col-md-3">
 		<section class="leftbar">
-			<%= render 'shared/leftsidebar' %>
+			<!--<%= render 'shared/leftsidebar' %>-->
 		</section>
 	</div>
 	<div class="col-md-6">
@@ -27,10 +36,43 @@
 	</div>
 	<div class="col-md-3">
 		<section class="rightbar">
-			<%= render 'shared/rightsidebar' %>
+			<!--<%= render 'shared/rightsidebar' %>-->
 		</section>
 	</div>
 </div>
+
+<div class="row">
+        <div class="col-xs-4">
+            <h2>Twitter</h2>
+            <p class="text-justify">HTML is a markup language that is used for creating web pages. The HTML tutorial section will help you understand the basics of HTML, so that you can create your own web pages or website.</p>
+            <p><a href = "https://twitter.com/pakapply" class = "btn btn-primary btn-lg" role = "button">
+      Twitter
+   </a></p>
+        </div>
+        <div class="col-xs-4">
+            <h2>Facebook</h2>
+            <p class="text-justify">CSS is used for describing the presentation of web pages. The CSS tutorial section will help you learn the essentials of CSS, so that you can fine control the style and layout of your HTML document.</p>
+            <p>
+   <a href = "https://www.facebook.com/pakjobposting" class = "btn btn-primary btn-lg" role = "button">
+      Facebook
+   </a></p>
+        </div>
+        <div class="col-xs-4">
+            <h2>Google Plus</h2>
+            <p class="text-justify">Bootstrap is a powerful front-end framework for faster and easier web development. The Bootstrap tutorial section  will help you learn the techniques of Bootstrap so that you can .</p>
+            <p><a href = "https://plus.google.com/u/0/108681172820250920941/posts" class = "btn btn-primary btn-lg" role = "button">
+      Google Plus
+   </a></p>
+        </div>
+    </div>
+    <hr>
+   <div id="footer">
+  <div class="container-fluid"style="background-color:#C0C0C0">
+    <p class="text-muted">Copyright ©2015 PAKAPPLY</p>
+  </div>
+    </div>
+</div>
+
 
 </body>
 </html>
